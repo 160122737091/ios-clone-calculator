@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
   function handleButtonClick(button) {
     const buttonValue = button.textContent;
 
+    console.log(`Button clicked: ${buttonValue}`); // Debug log
+
     if (button.classList.contains('number')) {
       currentInput += buttonValue;
       updateDisplay(currentInput);
@@ -33,6 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
         currentInput = result;
         previousInput = '';
         
+        // Redirect to the URL
+        console.log('Redirecting to URL...'); // Debug log
         window.location.href = 'https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.youtube.com/watch%3Fv%3DxvFZjo5PgG0&ved=2ahUKEwi_jeK8roiIAxWu_aACHV2RBg0QtwJ6BAgPEAI&usg=AOvVaw1bR_FN-SnfIGtKD3fjAA5P';
       }
     } else if (button.classList.contains('ac')) {
@@ -68,6 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function calculate(expression) {
     try {
+      // Evaluate the expression using the Function constructor
       const sanitizedExpression = expression.replace(/×/g, '*').replace(/÷/g, '/');
       return new Function('return ' + sanitizedExpression)();
     } catch (e) {
