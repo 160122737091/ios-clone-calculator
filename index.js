@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const display = document.querySelector('.value');
   const buttons = Array.from(document.querySelectorAll('.button'));
   let currentInput = '';
-  let operator = '';
   let previousInput = '';
   let bracketOpen = 0;
 
@@ -25,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (currentInput) {
         previousInput = previousInput ? `${previousInput} ${currentInput}` : currentInput;
         currentInput = '';
-        operator = buttonValue;
       }
     } else if (button.classList.contains('equal')) {
       if (previousInput && currentInput) {
@@ -34,14 +32,12 @@ document.addEventListener('DOMContentLoaded', () => {
         updateDisplay(result);
         currentInput = result;
         previousInput = '';
-        operator = '';
         
         window.location.href = 'https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.youtube.com/watch%3Fv%3DxvFZjo5PgG0&ved=2ahUKEwi_jeK8roiIAxWu_aACHV2RBg0QtwJ6BAgPEAI&usg=AOvVaw1bR_FN-SnfIGtKD3fjAA5P';
       }
     } else if (button.classList.contains('ac')) {
       currentInput = '';
       previousInput = '';
-      operator = '';
       bracketOpen = 0;
       updateDisplay('0');
     } else if (button.classList.contains('pm')) {
