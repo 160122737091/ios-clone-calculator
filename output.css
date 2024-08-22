@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+body {
+  font-family: "Helvetica Neue", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f3f4f6;
+  margin: 0;
+}
+
+.calculator {
+  background: black;
+  border-radius: 20px; /* Adjusted for a less rounded look */
+  color: white;
+  height: 500px; /* Reduced height */
+  width: 400px; /* Reduced width */
+  padding: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.top-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px; /* Reduced height */
+  padding: 0 20px;
+}
+
+.value {
+  font-size: 60px; /* Reduced font size */
+  font-weight: 300;
+  height: 80px; /* Reduced height */
+  margin-bottom: 10px; /* Reduced margin */
+  text-align: right;
+}
+
+.buttons-container {
+  display: grid;
+  grid-gap: 10px; /* Reduced gap */
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+}
+
+.button {
+  align-items: center;
+  background: #333;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  font-size: 24px; /* Reduced font size */
+  height: 60px; /* Reduced height */
+  justify-content: center;
+  transition: filter .3s;
+  width: 60px; /* Reduced width */
+}
+
+.button.function {
+  color: black;
+  background: #a5a5a5;
+}
+
+.button.operator {
+  background: #f1a33c;
+}
+
+.button.number-0 {
+  border-radius: 30px; /* Adjusted radius for a smaller look */
+  grid-column: 1 / span 2;
+  justify-content: center;
+  width: 120px; /* Adjusted width */
+}
+
+.button:active,
+.button:focus {
+  filter: brightness(120%);
+}
+
+.bottom {
+  width: 120px; /* Adjusted width */
+  height: 5px;
+  background: white;
+  border-radius: 4px;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
